@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Static web hosting
+Parameters:
+  Domain:
+    Type: String
+    Default: 2024-03-14-the-atomicity-com
+Resources:
+  SiteBucket:
+    Properties:
+      BucketName: !Ref Domain
+    Type: AWS::S3::Bucket

@@ -1,0 +1,41 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Atomicity Consulting"
+themesDir = "themes"
+theme = "hugo-hero-theme"
+uglyURLs = true
+
+[params]
+  google_analytics_id=""
+
+  [params.homepage_meta_tags]
+    meta_description = "Atomicity Consulting is a unipersonal company that provides DevOps services"
+    meta_og_title = "Atomicity Consulting"
+    meta_og_type = "website"
+    meta_og_url = "https://www.theatomicity.com"
+    meta_og_image = "https://www.theatomicity.com/images/logo.svg"
+    meta_og_description = "Atomicity Consulting is a unipersonal company that provides DevOps services."
+
+[[menu.main]]
+	name = "Services"
+	url = "/services.html"
+    weight = 1
+
+[[menu.main]]
+    name = "Work"
+    url = "/work.html"
+    weight = 2
+
+[[menu.main]]
+    name = "About"
+    url = "/about.html"
+    weight = 3
+
+[[menu.main]]
+    name = "Contact"
+    url = "/contact.html"
+    weight = 4
+
+[permalinks]
+  post = "/:year/:month/:day/:slug/"
+  pages = "/:filename/"

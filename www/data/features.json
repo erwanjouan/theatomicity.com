@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Engineer",
+    "description": "Master degree from french engineering school",
+    "image": "features/noun_branding_1885335.svg"
+  },
+  {
+    "title": "Certified  Consultant",
+    "description": "AWS Certification available upon request",
+    "image": "features/noun_The Process_1885341.svg"
+  },
+  {
+    "title": "Paris and surroundings",
+    "description": "or Remotely",
+    "image": "features/noun_3d modeling_1885342.svg"
+  }
+]

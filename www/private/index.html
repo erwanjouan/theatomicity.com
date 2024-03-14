@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Private zone index</title>
+    <!-- https://developers.google.com/identity/sign-in/web/ -->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="815946762465-612h4f8eeoio8c24cbkaafcjb5bbjcpo.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+    <br /><br />
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <br /><br />
+    <!--iterate over bucket list-->
+    %{ for bucket in buckets ~}
+    <a href="${bucket}/index.html">${bucket}</a><br/>
+    %{ endfor ~}
+    <!-- ends bucket list iteration-->
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+
+        // Store JWT as a cookie
+        document.cookie = "id_token="+id_token;
+      }
+    </script>
+  </body>
+</html>

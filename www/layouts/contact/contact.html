@@ -1,0 +1,31 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-contact{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+<div class="intro intro-small">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      {{ .Content }}
+      <ul>
+        <li><strong>Linkedin: </strong><a href="{{ .Site.Data.contact.linkedin }}">
+            {{ .Site.Data.contact.linkedin }}</a></li>
+
+        {{ if .Site.Data.contact.address }}
+        <li><strong>Address: </strong>{{ .Site.Data.contact.address }}</li>
+        {{ end }}
+      </ul>
+      <div><br/>Messages will be answered in 24h during working hours</div>
+    </div>
+  </div>
+</div>
+{{ end }}

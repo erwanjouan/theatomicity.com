@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="100" height="50">
+  <text x="5" y="5" dx="30" dy="32" font-size="35px" font-weight="bold" style="fill:pink;stroke:#bb241d;stroke-width:2">∞</text>
+</svg>
