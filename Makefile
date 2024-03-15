@@ -13,7 +13,7 @@ start:
 	docker run --rm -ti -v ~/.aws:/root/.aws $(PROJECT_NAME) s3 sync /tmp s3://$(PROJECT_NAME)
 
 run_local:
-	export IMAGE_NAME=static_web_hosting && \
+	export IMAGE_NAME=the-atomicity-com && \
 	export HOST_PORT=8080 && \
 	docker build -t $${IMAGE_NAME} -f Dockerfile.local . && \
 	echo $${IMAGE_NAME} running on localhost:$${HOST_PORT} && \
