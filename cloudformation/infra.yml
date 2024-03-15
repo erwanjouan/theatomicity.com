@@ -131,3 +131,5 @@ Resources:
 Outputs:
   CloudFrontUrl:
     Value: !GetAtt CloudFrontDistribution.DomainName
+  CloudFrontUrlWww:
+    Value: !GetAtt CloudFrontDistributionWww.DomainName
