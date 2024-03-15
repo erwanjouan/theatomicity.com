@@ -1,9 +1,0 @@
-{
-  "name": "aws-jwt-auth-lambda",
-  "version": "0.1.0",
-  "author": "EJO inspired from Vasilii Trofimchuk",
-  "private": true,
-  "dependencies": {
-    "jsonwebtoken": "latest"
-  }
-}
