@@ -13,7 +13,7 @@
   --white: #ffffff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #bb241d;
+  --primary: #21887f;
   --secondary: #43454d;
   --success: #28a745;
   --info: #17a2b8;
@@ -132,12 +132,12 @@ sup {
   top: -.5em; }
 
 a {
-  color: #bb241d;
+  color: #21887f;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #e55f59;
+    color: #3fd0c4;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -1012,13 +1012,13 @@ mark,
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #ecc2c0; }
+  background-color: #c1dedb; }
 
 .table-hover .table-primary:hover {
-  background-color: #e6afac; }
+  background-color: #b0d5d1; }
   .table-hover .table-primary:hover > td,
   .table-hover .table-primary:hover > th {
-    background-color: #e6afac; }
+    background-color: #b0d5d1; }
 
 .table-secondary,
 .table-secondary > th,
@@ -1200,12 +1200,12 @@ mark,
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #bb241d !important; }
+  background-color: #21887f !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #8f1c16 !important; }
+  background-color: #175f59 !important; }
 
 .bg-secondary {
   background-color: #43454d !important; }
@@ -1300,7 +1300,7 @@ button.bg-dark:focus {
   border-left: 0 !important; }
 
 .border-primary {
-  border-color: #bb241d !important; }
+  border-color: #21887f !important; }
 
 .border-secondary {
   border-color: #43454d !important; }
@@ -5280,10 +5280,10 @@ button.bg-dark:focus {
   color: #fff !important; }
 
 .text-primary {
-  color: #bb241d !important; }
+  color: #21887f !important; }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #8f1c16 !important; }
+  color: #175f59 !important; }
 
 .text-secondary {
   color: #43454d !important; }
@@ -5386,7 +5386,7 @@ a.text-dark:hover, a.text-dark:focus {
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 32px;
     height: 3px;
-    background-color: #bb241d;
+    background-color: #21887f;
     border-radius: 3px;
     position: absolute;
     transition-property: transform;
@@ -5435,7 +5435,7 @@ ol {
     flex: 1; }
 
 .header {
-  color: #bb241d;
+  color: #21887f;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -5613,24 +5613,24 @@ ol {
         font-weight: regular;
         text-transform: uppercase;
         text-decoration: none;
-        color: #bb241d; }
+        color: #21887f; }
         .main-menu > ul > li > a:hover {
-          background: #bb241d;
+          background: #21887f;
           color: #ffffff;
           text-decoration: none; }
       .main-menu > ul > li.active > a {
-        background: #bb241d;
+        background: #21887f;
         text-decoration: none;
         color: #ffffff; }
         .main-menu > ul > li.active > a:hover {
           text-decoration: none;
-          background: #bb241d;
+          background: #21887f;
           transition: all 225ms ease-in 0s;
           color: #ffffff; }
 
 .main-menu-mobile {
   position: fixed;
-  background: #bb241d;
+  background: #21887f;
   top: 0;
   left: 0;
   width: 100%;
@@ -5744,7 +5744,7 @@ ul.social {
   .hamburger .hamburger-inner,
   .hamburger .hamburger-inner::before,
   .hamburger .hamburger-inner::after {
-    background: #bb241d; }
+    background: #21887f; }
   .hamburger .hamburger-inner::after {
     width: 18px;
     right: 0; }
@@ -5756,7 +5756,7 @@ ul.social {
   white-space: nowrap;
   display: inline-block;
   padding: 7px 15px;
-  background: #bb241d;
+  background: #21887f;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
@@ -5767,7 +5767,7 @@ ul.social {
   transition: all 0.15s ease; }
   .button:hover {
     color: #fff;
-    background-color: #de352d;
+    background-color: #2bb1a5;
     text-decoration: none; }
 
 .button-white {
@@ -5776,7 +5776,7 @@ ul.social {
   border: 2px solid #fff; }
 
 .title-1 {
-  color: #bb241d;
+  color: #21887f;
   font-size: 2.4rem;
   line-height: 1.2;
   font-family: "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system; }
@@ -5846,7 +5846,7 @@ ul.social {
     .content h2 {
       line-height: 1.4; } }
 .content h3 {
-  color: #bb241d;
+  color: #21887f;
   line-height: 1.4;
   font-weight: 200;
   letter-spacing: 1px; }
@@ -5874,7 +5874,7 @@ ul.social {
       padding-top: 200px;
       padding-bottom: 100px; } }
   .intro h1 {
-    color: #bb241d;
+    color: #21887f;
     font-size: 2.4rem;
     line-height: 1.2;
     font-family: "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
@@ -5929,13 +5929,13 @@ ul.social {
     transform: skewY(-5deg); }
 
 .strip-primary-gradient {
-  background-image: linear-gradient(to right, #bb241d, #43454d); }
+  background-image: linear-gradient(to right, #21887f, #43454d); }
 
 .strip-primary-gradient-top-bottom {
-  background-image: linear-gradient(to bottom, #bb241d, #43454d); }
+  background-image: linear-gradient(to bottom, #21887f, #43454d); }
 
 .strip-primary {
-  background-color: #bb241d; }
+  background-color: #21887f; }
 
 .strip-secondary {
   background-color: #43454d; }
@@ -6000,14 +6000,14 @@ ul.social {
         font-size: 0.8rem;
         font-weight: 700; }
       .feature .feature-content p em {
-        color: #bb241d;
+        color: #21887f;
         font-style: normal; }
 
 .hero-image {
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
-  background-color: #bb241d;
+  background-color: #21887f;
   height: 400px;
   position: relative;
   padding-top: 60px; }
@@ -6078,7 +6078,7 @@ ul.social {
   background-blend-mode: overlay; }
 
 .bg-primary {
-  background-color: #bb241d; }
+  background-color: #21887f; }
 
 .bg-secondary {
   background-color: #43454d; }
@@ -6126,7 +6126,7 @@ ul.social {
   .work-summary .work-content {
     flex: 1;
     padding: 20px;
-    border-bottom: 2px solid #bb241d; }
+    border-bottom: 2px solid #21887f; }
     .work-summary .work-content .work-title {
       font-family: "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
       font-size: 1.5rem; }
@@ -6137,7 +6137,7 @@ ul.social {
 .page-work-single h1.title {
   font-size: 3rem;
   font-family: "Lato", "Helvetica Neue", Arial, sans-serif, -apple-system;
-  color: #bb241d; }
+  color: #21887f; }
 
 .page-work-single .work-image img {
   width: 100%;
