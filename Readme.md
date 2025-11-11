@@ -9,4 +9,4 @@
         CloudFront --> S3(Private\nS3\nBucket\n--eu-west-1--)
         S3 --- OAC(Origin Access control\n--Global--)
         
-```
+```# theatomicity.com
