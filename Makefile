@@ -22,3 +22,9 @@ run_local:
 stop:
 	docker run --rm -ti -v ~/.aws:/root/.aws $(PROJECT_NAME) s3 rm s3://$(PROJECT_NAME) --recursive && \
 	aws cloudformation delete-stack --stack-name $(STACK_NAME)
+
+prerequisites:
+	aws cloudformation deploy \
+			--stack-name $(STACK_NAME)-pre-requisites \
+			--capabilities CAPABILITY_NAMED_IAM \
+			--template-file pre-requisites/iam.yml

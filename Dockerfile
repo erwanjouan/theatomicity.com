@@ -1,5 +1,7 @@
 FROM dinofizz/hugo AS build
 
+#  ENV HUGO_VERSION=0.69.0
+
 # The source files are copied to /site
 COPY . /app
 WORKDIR /app

@@ -1,0 +1,38 @@
+name: Deploy to AWS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write # unless AWS cannot read Github Jwt token
+  contents: read
+
+jobs:
+  aws:
+    environment: production # github environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Configure AWS Credentials for prod account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_PROD_ACCOUNT_ID }}:role/the-atomicity-com-github-actions-role
+          aws-region: eu-west-1
+      - name: Deploy to AWS CloudFormation
+        uses: aws-actions/aws-cloudformation-github-deploy@v1
+        with:
+          name: the-atomicity-com
+          template: cloudformation/infra.yml
+          no-fail-on-empty-changeset: "1"
+          parameter-overrides: "HostedZoneID=${{ secrets.AWS_HOSTED_ZONE_ID }},Domain=theatomicity.com,TlsCertificateUuid=${{ secrets.TLS_CERTIFICATE_UUID }},TlsCertificateUuidWWW=${{ secrets.TLS_CERTIFICATE_UUID_WWW }}"
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.69.0'
+      - name: Build
+        run: cd www && hugo --minify --enableGitInfo
+      - name: Deploy to S3
+        run: aws s3 sync --delete www/public/ s3://theatomicity.com

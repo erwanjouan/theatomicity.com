@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Iam for github actions
+
+Resources:
+
+  # OIDC provider hookup, this tells AWS to delegate authN Github
+  GithubActionsOIDCProvider:
+    # https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws
+    Properties:
+      ThumbprintList: # used to verify github is github
+        - 6938fd4d98bab03faadb97b34396831e3780aea1
+      ClientIdList:
+        - sts.amazonaws.com
+      Url: https://token.actions.githubusercontent.com # url used for github verification
+    Type: AWS::IAM::OIDCProvider
+
+  GithubActionsRole:
+    Properties:
+      RoleName: the-atomicity-com-github-actions-role
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          Effect: Allow
+          Principal:
+            Federated: !GetAtt GithubActionsOIDCProvider.Arn
+          Action: sts:AssumeRoleWithWebIdentity # STS operation that is going to be performed
+          Condition:
+            # checks in the OIDC token
+            StringLike:
+              # Subject: all repositories in organization erwanjouan
+              'token.actions.githubusercontent.com:sub': ['repo:erwanjouan/*']
+              # Audience: the identity to whom we are authenticating
+            StringEqualsIgnoreCase:
+              'token.actions.githubusercontent.com:aud': sts.amazonaws.com
+      Policies:
+        # Prevents Github actions from assuming any other role
+        # https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services#example-iam-policy
+        - PolicyName: PreventAssumeRole
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              Effect: Deny
+              Action: sts:AssumeRole
+              Resource: '*'
+        - PolicyName: AllowCloudFormation
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              Effect: Allow
+              Action: cloudformation:*
+              Resource: '*'
+      # The actual permission
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/CloudFrontFullAccess
+        - arn:aws:iam::aws:policy/AWSCertificateManagerReadOnly
+        - arn:aws:iam::aws:policy/AmazonRoute53FullAccess
+    Type: AWS::IAM::Role
+
+Outputs:
+  RoleArn:
+    Value: !GetAtt GithubActionsRole.Arn
