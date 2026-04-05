@@ -1,0 +1,101 @@
+# DevSecOps Consulting
+
+My mission is to shorten software lifecycle from design to production rollout. By taking advantage of cloud infrastructures, we help building reliable, fast and secure applications.
+
+# Cloud
+
+By taking advantage of infrastructure as code, your artifacts can be rapidly and securely hosted on a Cloud infrastructure, being effortlessly connected to their dependencies (databases, caches, message brokers, etc...). 
+
+## From on-premise to hybrid Cloud infrastructure
+
+The ability to deploy application securely on Cloud is a game changer. In addition to velocity, any actor of software industry can optimize its computing infrastructure cost as Capex can be reduced to nearly zero. Our expertise can ease this transition for your IT resources from on-premise to Cloud.
+
+## Programmable infrastructure.
+
+To ensure deployed resources will actually meet their desired final state, configuration management tools (e.g Terraform, Ansible) can be used. It typically keeps track of resources state on a highly available persisting media. For each deployment, only the difference between current state and desired state is applied to update environment seamlessly.
+
+## Become highly available and global in seconds
+
+Public cloud providers allows developers to deliver applications globally within a very little amount of time. We help them design secured and highly available workload.
+
+# CI/CD
+
+We help building effective Continuous Integration / Continuous Deployment pipelines so that production roll-outs become a routine task. 
+
+## Containerized artifacts
+
+Take advantage of application containerization to build portable artifacts which can be run either locally or on production environment. Ease the configuration management with tagging and secured built image on a private registry.
+
+## Tests and Code Quality
+
+Introducing a stage of integration and non-regression tests in the deployment pipeline allows to secure roll-outs and perform early anomaly detection. We can also bring our expertise to add code quality checks.
+
+## Infrastructure testing
+
+At the end of deployment, infrastructure properties can be checked programmatically to ensure it is compliant to corporate security rules.
+
+
+# Site Reliability
+
+Because reliability is the most critical feature in software industry and because a lot of operational tasks are still done manually, SRE aims to automate as much as possible the post-deployment phase.
+
+## SRE mantra
+
+SRE core values can be summarized as conciliating between pace of innovation and product stability. The SRE prerogatives include the availability, latency, performance, efficiency, change management, monitoring, emergency response and capacity planning of their service(s).
+
+## Build observability system
+
+A central part of SRE mission is to enable :
+
+- logs to ease diagnostic
+- alerts when an operator needs to take actions
+- ticketing for prioritizing tasks after incident
+
+## Demand Forecasting
+
+Availability cannot be separated from an accurate estimation of the needed capacities. Hence, a member of SRE team is responsible for provisioning adequate resources and implement auto-scaling whenever it’s possible.
+
+## Performance
+
+As performance is a function of capacity and costs, SRE aims to adjust the provisioning strategy for a given software deployment.
+
+# GitOps
+
+Development best practices such as code review and version control has traditionally been performed on source code in software industry. GitOps framework aims to extend these concepts to the code dedicated to provisioning of infrastructure resources.
+
+## GitOps = IaC + MRs + CI/CD
+
+GitOps is a methodology firstly introduced by WeaveWork that combines the benefit of Infrastructure as Code (Iac), Merge Requests from Git (or MRs as labeled in most Git providers) and Continuous Integration / Continuous Deployment pipelines.
+
+In this methodology, the Git repository is the unique source of truth for configuration changes tracking. When a code change is approved by a peer, the Merge Request gets validated and then deployment pipeline is triggered to the appropriate environment.
+
+# Development
+
+With Software Craftsmanship as a core value, we are able to design, develop and deploy a n-tier application. A proven expertise in Relational Database Management Systems allows us to define efficient data models.
+
+## Back-end development
+
+Our services include the ability to develop or maintain server application, mainly focusing of these languages:  Java, Go, Python.
+
+## Front-end development
+
+Design and implementation of a modern and dynamic web interface in Angular are available upon request.
+
+## API management
+
+We are able to define the programmatic contract between producers and consumers of an API with OpenAPI specification, and leverage code generation tools to operate the API.
+
+# Security
+
+
+Protecting data, systems and assets is the highest priority for a Business running on Cloud. Security is "job zero" as stated in AWS guidelines. 
+Controlling who has access to which resource is a decisive task to eliminate risk of mis-use and interferences across teams.
+
+## Security at all layers
+
+Instead of only filtering access at network boundaries, Cloud infrastructure allows to perform a defense in depth where all the involved components implements security rules.
+Critical Data can then be protected at rest and in transit, complying with all level of confidentiality.
+
+## RBAC
+
+"Role Based Access Control" allows an organization to restrict access to resources only to authorized users. A fined grained policy can be applied on any user based on its position. Combined with a strict encryption management, this approach meets the best practices in term of security.   

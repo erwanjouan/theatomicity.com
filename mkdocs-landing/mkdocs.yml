@@ -1,0 +1,65 @@
+site_name: Atomicity
+nav:
+  - pitch: pitch.md
+
+theme:
+  name: landing
+
+  favicon: assets/favicon.png
+  tagline: |
+    /[atomisiti](https://theatomicity.com)/
+  page_source:
+    link: https://github.com/erwanjouan/theatomicity.com
+  socials:
+    - label: LinkedIn
+      link: https://www.linkedin.com/in/erwan-jouan-49916912/
+      icon: [brands, linkedin]
+    - label: Email
+      link: mailto:erwan.jouan@theatomicity.com
+      icon: at
+    - label: GitHub
+      link: https://github.com/erwanjouan/
+      icon: [brands, github]
+
+  header_layout:
+    - tagline
+    - title
+    - avatar
+    - socials
+  border_left: 2px solid var(--primary)
+  avatar_size: 12rem
+  round_avatar: True
+  toc_level: 2
+
+  # colors
+  primary_color: "#d9a35d"
+  secondary_color: "#4862a6"
+  tertiary_color: "#b75034"
+  base_color: "#ffffff"
+  mantle_color: "#f2f2f2"
+  crust_color: "#d2d2d2"
+  overlay_color: "#b2b2b2"
+  text_color: "#161616"
+  hltext_color: "#f2f2f2"
+  # colors (dark)
+  primary_color_dark: "#d9a35d"
+  secondary_color_dark: "#46B1C9"
+  tertiary_color_dark: "#D4ADCF"
+  base_color_dark: "#212530"
+  mantle_color_dark: "#111318"
+  crust_color_dark: "#050608"
+  overlay_color_dark: "#000000"
+  text_color_dark: "#f2f2f2"
+  hltext_color_dark: "#161616"
+
+  # fonts
+  body_font: Hind
+  heading_font: Josefin Sans
+  mono_font: JetBrains Mono
+
+markdown_extensions:
+  - toc
+  - attr_list
+  - def_list
+  - md_in_html
+  - nl2br
