@@ -49,3 +49,7 @@ Thumbs.db
 **/_gen
 **/.idea
 **/.venv
+
+**/scaleway.auto.tfvars
+**/.terraform.lock.hcl
+**/scw.env
