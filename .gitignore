@@ -53,3 +53,4 @@ Thumbs.db
 **/scaleway.auto.tfvars
 **/.terraform.lock.hcl
 **/scw.env
+**/site

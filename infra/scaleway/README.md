@@ -19,3 +19,7 @@ https://datatask.io/blog/scaleway-terraform
 
 https://registry.terraform.io/providers/scaleway/scaleway/latest/docs/guides/backend_guide/
 https://stackoverflow.com/questions/68680341/using-variables-in-terraform-backend-s3
+
+### Github actions
+
+https://www.scaleway.com/en/docs/tutorials/deploy-automate-mkdocs-site/

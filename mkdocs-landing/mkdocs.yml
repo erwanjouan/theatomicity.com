@@ -4,7 +4,8 @@ nav:
 
 theme:
   name: landing
-
+  static_templates:
+    - 404/index.html
   favicon: assets/favicon.png
   tagline: |
     /[atomisiti](https://theatomicity.com)/
