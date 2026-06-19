@@ -14,17 +14,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Configure AWS Credentials for prod account
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_PROD_ACCOUNT_ID }}:role/the-atomicity-com-github-actions-role
-          aws-region: eu-west-1
       - name: Install NodeJs
         uses: actions/setup-node@v3
         with:
           node-version: 24
       - name: Install cdk
         run: npm install -g aws-cdk && npm install
+        working-directory: ./infra/aws/cdk
+      - name: Configure AWS Credentials for management account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_MANAGEMENT_ACCOUNT_ID }}:role/the-atomicity-com-github-actions-role
+          aws-region: eu-west-3
+      - name: Bootstrap CDK (management account)
+        run: cdk bootstrap aws://${{ secrets.AWS_MANAGEMENT_ACCOUNT_ID }}/eu-west-3
+        working-directory: ./infra/aws/cdk
+      - name: Configure AWS Credentials for prod account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_PROD_ACCOUNT_ID }}:role/the-atomicity-com-github-actions-role
+          aws-region: eu-west-3
+      - name: Bootstrap CDK (prod account)
+        run: |
+          cdk bootstrap aws://${{ secrets.AWS_PROD_ACCOUNT_ID }}/eu-west-3 \
+            --trust ${{ secrets.AWS_MANAGEMENT_ACCOUNT_ID }} \
+            --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess
         working-directory: ./infra/aws/cdk
       - name: Deploy to AWS
         run: cdk deploy --all --require-approval never --context HostedZoneID=${{ secrets.AWS_HOSTED_ZONE_ID }} --context Domain=theatomicity.com --context TlsCertificateUuid=${{ secrets.TLS_CERTIFICATE_UUID }} --context AccountId=${{ secrets.AWS_PROD_ACCOUNT_ID }}
