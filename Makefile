@@ -1,33 +1,11 @@
 .PHONY: start stop prerequisites prerequisites-prod prerequisites-management serve_content build
 
 PROJECT_NAME:=theatomicity.com
-AWS_STACK_NAME:=the-atomicity-com
 HOST_PORT:=8000
 IMAGE_NAME:=the-atomicity-com
 
 TERRAFORM_IMAGE:=oowy/opentofu
 BUILD_IMAGE:=python-mkdocs-theme
-
-DEFAULT_AWS_REGION:=eu-west-3
-
-AWS_PROFILE_PROD?=production
-AWS_PROFILE_MANAGEMENT?=management
-
-prerequisites: prerequisites-prod prerequisites-management
-
-prerequisites-prod:
-	AWS_PROFILE=$(AWS_PROFILE_PROD) aws cloudformation deploy \
-			--stack-name $(AWS_STACK_NAME)-pre-requisites \
-			--capabilities CAPABILITY_NAMED_IAM \
-			--region $(DEFAULT_AWS_REGION) \
-			--template-file infra/aws/pre-requisites/iam.yml
-
-prerequisites-management:
-	AWS_PROFILE=$(AWS_PROFILE_MANAGEMENT) aws cloudformation deploy \
-			--stack-name $(AWS_STACK_NAME)-pre-requisites \
-			--capabilities CAPABILITY_NAMED_IAM \
-			--region $(DEFAULT_AWS_REGION) \
-			--template-file infra/aws/pre-requisites/iam.yml
 
 run_content:
 	docker build -t $(IMAGE_NAME)-build \
